@@ -39,7 +39,7 @@
         type="info"
         @click="handleRun"
         size="medium"
-        :disabled="!(status === 0) || disabledRun"
+        :disabled="!(status == 0) || disabledRun"
       >提交运行</el-button>
     </div>
   </div>

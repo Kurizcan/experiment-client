@@ -19,7 +19,7 @@
           round
           type="success"
           size="medium"
-          :disabled="!(this.$route.query.status === 0)"
+          :disabled="submit_disabled"
           @click="experimentSubmit"
         >提交实验</el-button>
       </div>
@@ -78,7 +78,8 @@ export default {
       curPage: 1,
       totalPage: 1,
       loading: true,
-      pageSize: 10
+      pageSize: 10,
+      submit_disabled: false
     };
   },
   computed: {
@@ -90,6 +91,8 @@ export default {
     }
   },
   created: function() {
+    this.submit_disabled = this.$route.query.status == 3? true:false;
+    console.log("submit_disabled:", this.submit_disabled)
     this.getProblemList(this, this.$route.params.groupId);
   },
   methods: {
