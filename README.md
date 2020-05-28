@@ -1,6 +1,6 @@
 # experiment-clinet
 
-## Project setup
+## 1. Project setup
 ```
 npm install
 ```
@@ -23,13 +23,9 @@ npm run build
 ```
 npm run lint
 ```
+## 2. Run in docker
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
-
-### run in docker
-
-#### edit the default.conf
+#### Edit the default.conf
 
 you should make sure the default.conf proxy_pass which is backend server's ip address of right.
 ```
@@ -38,12 +34,12 @@ location /api/ {
 }
 ```
 
-#### build image
+#### Build image
 ```
 docker build -t vue_container .
 ```
 
-#### run container
+#### Run container
 ```
 docker run -p 8888:80 -d --name experiment_client vue_container
 ```
