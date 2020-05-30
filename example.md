@@ -1,3 +1,15 @@
+# 标题示例
+
+Customers Who Never Order
+
+# 描述示例
+
+Suppose that a website contains two tables, the Customers table and the Orders table. Write a SQL query to find all customers who never order anything. Using the above tables as example, return the following:
+
+# 答案示例
+
+select customers.name as 'Customers' from customers where customers.id not in (select customerid from orders);
+
 # 输入样例说明
 
 输入样例包括两个字段
